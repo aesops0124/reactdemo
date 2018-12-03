@@ -4,7 +4,7 @@ import './App.css';
 
 class App extends Component {
 
-  state = {number: 0}
+  state = {number: this.props.defaultNumber}
   updateNumber = () => {
     this.setState({number: 1})
   }
