@@ -3,6 +3,11 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+  state = {number: 0}
+  updateNumber = () => {
+    this.setState({number: 1})
+  }
   alertText() {
     alert("now you know how to handle conlick event")
   }
@@ -25,8 +30,8 @@ class App extends Component {
       //   </header>
       // </div>
       <div>
-          <button onClick={this.alertText}>Hello world!</button>
-        <span>number: 0</span>
+          <button onClick={this.updateNumber}>Hello world!</button>
+        <span>number: {this.state.number}</span>
       </div>
     );
   }
