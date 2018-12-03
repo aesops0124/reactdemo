@@ -2,11 +2,18 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Number from './components/number.js'
+import Line from './components/line.js'
 class App extends Component {
 
-  state = {number: this.props.defaultNumber}
+  state = {number: this.props.defaultNumber,
+    numberArray: new Array(1).fill(0)}
   onclickDefaultNumber = () => {
-    this.setState({number: this.props.onclickDefaultNumber(this.state.number)})
+    var updatedNumber = this.props.onclickDefaultNumber(this.state.number)
+    this.setState({
+      
+      number: updatedNumber,
+      numberArray: new Array(updatedNumber).fill(0)
+    })
   }
 
   alertText() {
@@ -32,7 +39,8 @@ class App extends Component {
       // </div>
       <div>
           <button onClick={this.onclickDefaultNumber}>Hello world!</button>
-          <Number/>
+          <Number defaultNumber={this.state.number}/>
+          {this.state.numberArray.map(() => (<Line/>))}
       </div>
     );
   }

@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
 
 export default class Number extends Component {
+           
 
     render() {
         return (
-            <span>number: </span>
+            <div>
+                <span>number: {this.props.defaultNumber}</span> 
+            </div>
         );
     }
 }
