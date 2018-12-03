@@ -3,6 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  alertText() {
+    alert("now you know how to handle conlick event")
+  }
   render() {
     return (
       // <div className="App">
@@ -22,7 +25,7 @@ class App extends Component {
       //   </header>
       // </div>
       <div>
-        <button>Hello world!</button>
+          <button onClick={this.alertText}>Hello world!</button>
         <span>number: 0</span>
       </div>
     );
