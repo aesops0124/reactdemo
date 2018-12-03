@@ -5,9 +5,10 @@ import './App.css';
 class App extends Component {
 
   state = {number: this.props.defaultNumber}
-  updateNumber = () => {
-    this.setState({number: 1})
+  onclickDefaultNumber = () => {
+    this.setState({number: this.props.onclickDefaultNumber(this.state.number)})
   }
+
   alertText() {
     alert("now you know how to handle conlick event")
   }
@@ -30,7 +31,7 @@ class App extends Component {
       //   </header>
       // </div>
       <div>
-          <button onClick={this.updateNumber}>Hello world!</button>
+          <button onClick={this.onclickDefaultNumber}>Hello world!</button>
         <span>number: {this.state.number}</span>
       </div>
     );
